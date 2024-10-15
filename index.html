@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto);
+      @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap);
+      html, body {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      h1 {
+        font-size: 4rem;
+        margin: unset;
+      }
+    </style>
+    <link href="manifest.json" rel="manifest"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="header.css" rel="stylesheet"/>
+    <script async src="flutter_bootstrap.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script async src="vanta.clouds2.min.js"></script>
+    <script async src="background-init.js"></script>
+    <script async src="cloud2.js"></script>
+    <!--$-->
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="pages/home.client.dart.js" defer></script>
+    <style>
+      .counter {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: #800080;
+        border-bottom-color: #800080;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+      }
+      .counter button {
+        font-size: 2rem;
+        width: 2em;
+        height: 2em;
+        border: unset;
+        cursor: pointer;
+        border-radius: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .counter button:hover {
+        background-color: #0001;
+      }
+      .counter span {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+        min-width: 2.5em;
+        color: #800080;
+        font-size: 4rem;
+        text-align: center;
+      }
+      ol {
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <header class="relative">
+        <nav class="bg-[#800080] top-4 bg-opacity-100 mx-auto fixed left-1/2 transform -translate-x-1/2 h-16 w-11/12 rounded-lg shadow-lg flex justify-between items-center p-4">
+          <div class="flex items-center">
+            <img class="h-12 w-12 mr-2" src="images/logo1.png"/>
+            <span class="text-white text-2xl font-bold font-space-grotesk">Bainaryglobe</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">HOME</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">ABOUT</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">SERVICES</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300 border border-white rounded-lg" href="/">CONTACT</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button class="text-white focus:outline-none md:hidden">
+              <span class="hamburger-icon"><div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white"></div></span>
+            </button>
+            <button class="text-white focus:outline-none"><img class="h-9 w-9" src="images/switch.png"/></button>
+          </div>
+        </nav>
+      </header>
+      <div class="flex-grow">
+        <!--@pages/home-->
+        <div id="background-div" class="p-4">
+          <section class="mt-20 p-4">
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+              <div class="flex-1 md:w-1/2">
+                <h1 class="text-6xl text-white font-bold text-shadow-lg font-space-grotesk">Building Digital Solutions, Solving Real Problems</h1>
+              </div>
+              <img class="w-full md:w-1/3 mt-4 md:mt-0 md:ml-4" src="images/logo.png"/>
+            </div>
+          </section>
+          <div class="w-full max-w-full p-4">
+            <div class="relative rounded-xl shadow-2xl overflow-hidden"><img class="w-full h-auto" alt="Bainaryglobe" src="/images/flatcard.png"/></div>
+          </div>
+          <div class=" text-white bg-[#0080000] p-4 text-center">
+            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
+              <div class="flex-1">
+                <p class="text-lg mb-2">The culture at Bainary Globe is driven by innovation, customer-centricity, and excellence. </p>
+                <p class="text-lg mb-2">
+                  It promotes creativity, teamwork, and diverse perspectives, ensuring solutions that exceed expectations.
+                </p>
+                <p class="text-lg">
+                  Honesty, transparency, and ethical practices guide decision-making, while professional growth is supported through continuous learning and career advancement opportunities.
+                </p>
+              </div>
+              <div class="flex-shrink-0">
+                <button class="bg-purple-700 text-white rounded-lg shadow-lg font-space-grotesk transition-colors duration-200 hover:bg-black px-6 py-3">Explore now</button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-full p-4">
+            <div class="relative rounded-xl shadow-2xl overflow-hidden"><img class="w-full h-auto" alt="Bainaryglobe" src="/images/n2.png"/></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div class="w-full max-w-full p-4">
+              <div class="relative rounded-xl shadow-2xl overflow-hidden">
+                <img class="w-full h-auto" alt="Image 1" src="images/n3.png"/>
+                <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white p-2">The perfect platform to manage your digital solutions</div>
+                <div class="absolute bottom-4 left-4 bg-green-500 bg-opacity-50 text-white p-2 flex items-center rounded-lg">➔ learn more</div>
+              </div>
+            </div>
+            <div class="w-full max-w-full p-4">
+              <div class="relative rounded-xl shadow-2xl overflow-hidden">
+                <img class="w-full h-auto" alt="Image 2" src="images/n4.png"/>
+                <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white p-2">We Develop</div>
+                <div class="absolute bottom-4 left-4 bg-green-500 bg-opacity-50 text-white p-2 flex items-center rounded-lg">➔ learn more</div>
+              </div>
+            </div>
+            <div class="w-full max-w-full p-4">
+              <div class="relative rounded-xl shadow-2xl overflow-hidden">
+                <img class="w-full h-auto" alt="Image 3" src="images/n5.png"/>
+                <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white p-2">We innovate</div>
+                <div class="absolute bottom-4 left-4 bg-green-500 bg-opacity-50 text-white p-2 flex items-center rounded-lg">➔ learn more</div>
+              </div>
+            </div>
+            <div class="w-full max-w-full p-4">
+              <div class="relative rounded-xl shadow-2xl overflow-hidden">
+                <img class="w-full h-auto" alt="Image 4" src="images/n6.png"/>
+                <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white p-2">Connecting Ideas Innovation</div>
+                <div class="absolute bottom-4 left-4 bg-green-500 bg-opacity-50 text-white p-2 flex items-center rounded-lg">➔ learn more</div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full max-w-full p-4">
+            <div class="relative rounded-xl shadow-2xl overflow-hidden"><img class="w-full h-auto" alt="Bainaryglobe" src="/images/n7.png"/></div>
+          </div>
+          <div class="bg-[#0080000] p-4 text-center">
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <div class="flex-1">
+                <p class="text-lg mb-2">
+                  Binary Globe creates innovative, intuitive applications that address real-time challenges, enhancing efficiency and user experience across various sectors.
+                </p>
+                <p class="text-lg mb-2">
+                  Driven by values of innovation, reliability, user-centricity, and trust, the company adapts to technological advancements to build a more connected future.
+                </p>
+              </div>
+              <button class="bg-purple-700 text-white rounded-lg shadow-lg font-space-grotesk transition-colors duration-200 hover:bg-black px-6 py-3">Brand Overview</button>
+            </div>
+          </div>
+          <div class="bg-[#0080000] p-4 text-center">
+            <div class="flex flex-wrap justify-center items-center gap-4">
+              <div class="flex-1"><p class="text-lg mb-2">Integrity, Innovation, Excellence: Our Commitment to You</p></div>
+              <button class="bg-purple-700 text-white rounded-lg shadow-lg font-space-grotesk transition-colors duration-200 hover:bg-black px-6 py-3">Code of Conduct</button>
+            </div>
+          </div>
+          <div class="container mx-auto p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of Ben Lucky" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">Ben Lucky</h2>
+                <p class="text-gray-600">CEO</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">
+                  3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis
+                </p>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of Emmanuel Eyitayo" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">Emmanuel Eyitayo</h2>
+                <p class="text-gray-600">UI&#47;UX Designer</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">5+ years of experience in software development. Expert in Flutter and Dart.</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of Dereal Fortune" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">Dereal Fortune</h2>
+                <p class="text-gray-600">Motion Graphics</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">4+ years of experience in data science. Skilled in machine learning and AI.</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of David Uche" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">David Uche</h2>
+                <p class="text-gray-600">Backend Engineer</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">4+ years of experience in data science. Skilled in machine learning and AI.</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of Nathaniel Favour" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">Nathaniel Favour</h2>
+                <p class="text-gray-600">Devops Engineer</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">4+ years of experience in data science. Skilled in machine learning and AI.</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative">
+                <div class="absolute top-4 right-4"><i class="fab fa-linkedin-in text-black"></i></div>
+                <div class="flex justify-center mb-4">
+                  <div class="relative">
+                    <div class="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center">
+                      <img class="rounded-full" alt="Profile picture of Wisdom Wisdom" width="64" height="64" src="https://storage.googleapis.com/a1aa/image/e3zzv79Vr11VcC3KKDof5GtbVpa1ZLzjJL4J1JQiX4MSflNnA.jpg"/>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-lg font-semibold">Wisdom Wisdom</h2>
+                <p class="text-gray-600">Frontend Engineer</p>
+                <hr class="my-4"/>
+                <p class="text-gray-700">4+ years of experience in data science. Skilled in machine learning and AI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/@pages/home-->
+      </div>
+      <footer class="bg-[#000033] text-white font-bold p-4 flex flex-col items-center mt-auto">
+        <div class="social-icons flex mb-4">
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Facebook" src="images/logo1.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="LinkedIn" src="path/to/linkedin-icon.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Twitter" src="path/to/twitter-icon.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Instagram" src="path/to/instagram-icon.png"/></a>
+        </div>
+        <p><a href="mailto:info@bainaryglobe.com">info@bainaryglobe.com</a></p>
+        <p>Lagos, Nigeria</p>
+      </footer>
+    </div>
+  </body>
+</html>

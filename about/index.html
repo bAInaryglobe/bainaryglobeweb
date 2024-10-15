@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto);
+      @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap);
+      html, body {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      h1 {
+        font-size: 4rem;
+        margin: unset;
+      }
+    </style>
+    <link href="manifest.json" rel="manifest"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="header.css" rel="stylesheet"/>
+    <script async src="flutter_bootstrap.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script async src="vanta.clouds2.min.js"></script>
+    <script async src="background-init.js"></script>
+    <script async src="cloud2.js"></script>
+    <!--$-->
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="pages/about.client.dart.js" defer></script>
+    <style>
+      .counter {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: #800080;
+        border-bottom-color: #800080;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+      }
+      .counter button {
+        font-size: 2rem;
+        width: 2em;
+        height: 2em;
+        border: unset;
+        cursor: pointer;
+        border-radius: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .counter button:hover {
+        background-color: #0001;
+      }
+      .counter span {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+        min-width: 2.5em;
+        color: #800080;
+        font-size: 4rem;
+        text-align: center;
+      }
+      ol {
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <header class="relative">
+        <nav class="bg-[#800080] top-4 bg-opacity-100 mx-auto fixed left-1/2 transform -translate-x-1/2 h-16 w-11/12 rounded-lg shadow-lg flex justify-between items-center p-4">
+          <div class="flex items-center">
+            <img class="h-12 w-12 mr-2" src="images/logo1.png"/>
+            <span class="text-white text-2xl font-bold font-space-grotesk">Bainaryglobe</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">HOME</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">ABOUT</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300" href="/">SERVICES</a>
+            <a class="text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300 border border-white rounded-lg" href="/">CONTACT</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button class="text-white focus:outline-none md:hidden">
+              <span class="hamburger-icon"><div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white"></div></span>
+            </button>
+            <button class="text-white focus:outline-none"><img class="h-9 w-9" src="images/switch.png"/></button>
+          </div>
+        </nav>
+      </header>
+      <div class="flex-grow">
+        <!--@pages/about-->
+        <section>
+          <ol>
+            <li>
+              <h3>📖 Documentation</h3>
+              Jaspr&#39;s 
+              <a href="https://docs.page/schultek/jaspr">official documentation</a>
+               provides you with all information you need to get started.
+            </li>
+            <li>
+              <h3>💬 Community</h3>
+              Got stuck? Ask your question on the official 
+              <a href="https://docs.page/schultek/jaspr">Discord server</a>
+               for the Jaspr community.
+            </li>
+            <li>
+              <h3>📦 Ecosystem</h3>
+              Get official packages and integrations for your project like jaspr_router, jaspr_tailwind or jaspr_riverpod. Find packages built for Jaspr on pub.dev using the 
+              <a href="https://pub.dev/packages?q=topic%3Ajaspr">#jaspr</a>
+               topic, or publish your own.
+            </li>
+            <li>
+              <h3>💙 Support Jaspr</h3>
+              If you like Jaspr, consider starring us on 
+              <a href="https://github.com/schultek/jaspr">Github</a>
+               and tell your friends.
+            </li>
+          </ol>
+        </section>
+        <!--/@pages/about-->
+      </div>
+      <footer class="bg-[#000033] text-white font-bold p-4 flex flex-col items-center mt-auto">
+        <div class="social-icons flex mb-4">
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Facebook" src="images/logo1.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="LinkedIn" src="path/to/linkedin-icon.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Twitter" src="path/to/twitter-icon.png"/></a>
+          <a class="mx-2" href="#"><img class="w-5 h-5 md:w-8 md:h-8" alt="Instagram" src="path/to/instagram-icon.png"/></a>
+        </div>
+        <p><a href="mailto:info@bainaryglobe.com">info@bainaryglobe.com</a></p>
+        <p>Lagos, Nigeria</p>
+      </footer>
+    </div>
+  </body>
+</html>
