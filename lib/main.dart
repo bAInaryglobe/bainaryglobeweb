@@ -35,20 +35,21 @@ void main() {
       // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body')
           .text(fontFamily: const FontFamily.list([FontFamily('Roboto'), FontFamilies.sansSerif]))
-          .box(width: 100.percent, minHeight: 100.vh)
+          .box( width: 100.percent, minHeight: 100.vh)
           .box(margin: EdgeInsets.zero, padding: EdgeInsets.zero),
       css('h1').text(fontSize: 4.rem).box(margin: EdgeInsets.unset),
     ],
 
 
     head: [
+    
 
       // The generated flutter manifest and bootstrap script.
       link(rel: 'manifest', href: 'manifest.json'),
       link(href: 'styles.css', rel: 'stylesheet'),
       link(href: 'header.css', rel: 'stylesheet'),
       script(src: "flutter_bootstrap.js", async: true, []),
-
+      script(src: "background.js", async: true, []),
 
       // script(src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js", async: true, []),
       
