@@ -23,6 +23,7 @@ class ProfileCard extends StatelessComponent {
             ]),
           ]),
         ]),
+        
         h2(classes: 'text-lg font-semibold', [
           text('Dereal Fortune'),
         ]),
