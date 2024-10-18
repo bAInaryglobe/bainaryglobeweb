@@ -4,6 +4,7 @@ import 'package:bainaryglobeweb/components/home/flatcardmultiple.dart';
 import 'package:bainaryglobeweb/components/home/main.dart';
 import 'package:bainaryglobeweb/components/home/profilecard.dart' as Prof;
 import 'package:bainaryglobeweb/components/home/profilecardgrid.dart';
+import 'package:bainaryglobeweb/components/home/rolling.dart';
 import 'package:bainaryglobeweb/components/home/text.dart';
 import 'package:bainaryglobeweb/components/home/text2.dart';
 import 'package:bainaryglobeweb/components/home/text3.dart';
@@ -45,6 +46,8 @@ class HomeState extends State<Home> {
 
 
       const TitleText(),
+
+      const RollingImage(imageUrl: '/images/01.png'),
 
       const Rest.ResponsiveImageCard(imageUrl: '/images/n2.png', altText: 'Bainaryglobe'),
 
