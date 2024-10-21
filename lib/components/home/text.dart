@@ -47,18 +47,18 @@ class TitleText extends StatelessComponent {
       div(classes: 'flex flex-col md:flex-row flex-wrap justify-center items-center gap-4', [
         div(classes: 'flex-1', [
           p(classes: 'text-lg mb-2', [
-            text('The culture at Bainary Globe is driven by innovation, customer-centricity, and excellence. ')
+            text('At Bainary Globe, we are dedicated to crafting innovative digital solutions that effectively tackle real-world challenges,  ')
           ]),
           p(classes: 'text-lg mb-2', [
-            text('It promotes creativity, teamwork, and diverse perspectives, ensuring solutions that exceed expectations.')
+            text('empowering individuals and businesses to thrive in an ever-evolving landscape')
           ]),
           p(classes: 'text-lg', [
-            text('Honesty, transparency, and ethical practices guide decision-making, while professional growth is supported through continuous learning and career advancement opportunities.')
+            // text('Honesty, transparency, and ethical practices guide decision-making, while professional growth is supported through continuous learning and career advancement opportunities.')
           ]),
         ]),
         div(classes: 'flex-shrink-0', [
           button(
-            classes: 'bg-purple-700 text-white rounded-lg shadow-lg font-space-grotesk transition-colors duration-200 hover:bg-black px-6 py-3',
+            // classes: 'bg-purple-700 text-white rounded-lg shadow-lg font-space-grotesk transition-colors duration-200 hover:bg-black px-6 py-3',
             [
               text('Explore now'),
             ]

@@ -15,7 +15,7 @@ class App extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'flex flex-col min-h-screen', [
+    yield div(classes: 'flex flex-col min-h-screen ', [
       const Header(),
       div(classes: 'flex-grow', [
         Router(routes: [
@@ -23,12 +23,12 @@ class App extends StatelessComponent {
           Route(path: '/about', title: 'About', builder: (context, state) => const About()),
         ]),
       ]),
-      const Footer(),
+      // const Footer(),
     ]);
   }
 
 
-
+// w-5/6 mx-auto
   // @css final styles = [
 
   // ];

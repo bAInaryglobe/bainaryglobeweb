@@ -146,7 +146,7 @@ class ProfileCard extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative', [
+    yield div(classes: 'bg-purple-500 rounded-lg shadow-lg p-6 max-w-sm text-center relative', [
       div(classes: 'absolute top-4 right-4', [
         i(classes: 'fab fa-linkedin-in text-black', []),
       ]),

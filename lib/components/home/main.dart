@@ -29,6 +29,7 @@
 
 
 
+import 'package:bainaryglobeweb/components/home/text.dart';
 import 'package:jaspr/jaspr.dart';
 
 class CustomSection extends StatelessComponent {
@@ -42,9 +43,11 @@ class CustomSection extends StatelessComponent {
 
 
           h1(classes: 'text-6xl font-bold text-shadow-lg font-space-grotesk', [
-            text('Building Digital Solutions, Solving Real Problems')
+            text('Turning challenges into innovative solutions')
           ]),
 
+          const TitleText(),
+          
 // h1(classes: 'text-6xl font-bold', styles: 'text-shadow: 1px 1px 2px #000, 2px 2px 4px #000, 3px 3px 6px #000;', [
 //   text('Building Digital Solutions, Solving Real Problems').
 // ]),
@@ -72,7 +75,7 @@ class CustomSection extends StatelessComponent {
 
 
         ]),
-        img(src: 'images/logo.png', classes: 'w-full md:w-1/3 mt-4 md:mt-0 md:ml-4'), // Adjust width and margin for responsiveness
+        img(src: 'images/o1.png', classes: 'w-full md:w-1/3 mt-4 md:mt-0 md:ml-4'), // Adjust width and margin for responsiveness
 
         // script()
 

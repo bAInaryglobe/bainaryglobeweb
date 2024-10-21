@@ -1,9 +1,19 @@
 import 'package:bainaryglobeweb/components/cards/simpleCard.dart';
+import 'package:bainaryglobeweb/components/home/compoundcomponent.dart';
+import 'package:bainaryglobeweb/components/home/compounder.dart';
+// import 'package:bainaryglobeweb/components/home/compounder.dart';
+import 'package:bainaryglobeweb/components/home/customtextcomponent2.dart';
+import 'package:bainaryglobeweb/components/home/dyno.dart';
+import 'package:bainaryglobeweb/components/home/explore.dart';
 import 'package:bainaryglobeweb/components/home/flatcard.dart' as Rest;
 import 'package:bainaryglobeweb/components/home/flatcardmultiple.dart';
 import 'package:bainaryglobeweb/components/home/main.dart';
+import 'package:bainaryglobeweb/components/home/one.dart';
 import 'package:bainaryglobeweb/components/home/profilecard.dart' as Prof;
 import 'package:bainaryglobeweb/components/home/profilecardgrid.dart';
+import 'package:bainaryglobeweb/components/home/purplet.dart' as Pure;
+import 'package:bainaryglobeweb/components/home/purplet.dart';
+import 'package:bainaryglobeweb/components/home/quest.dart';
 import 'package:bainaryglobeweb/components/home/rolling.dart';
 import 'package:bainaryglobeweb/components/home/text.dart';
 import 'package:bainaryglobeweb/components/home/text2.dart';
@@ -35,36 +45,65 @@ class HomeState extends State<Home> {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(classes: 'p-4', id: 'background-div', [
+    yield div(classes: 'p-4 ', id: 'background-div', [
+
+br(),
+      const CustomTextComponent(textInput: "Turning challenges into innovative solutions"),
+
+      br(),
+
+      const CustomTextComponent2(textInput: "At Bainary Globe, we are dedicated to crafting innovative digital solutions that effectively tackle real-world challenges, empowering individuals and businesses to thrive in an ever-evolving landscape"),
+
+      const Explore(),
+
+      const SimpleLineComponent(),
 
 
-      const CustomSection(),
+
+      // const CustomSection(),
+
+      // const TitleText(),
 
       // const SimpleCard(title: "title", message: "message"),
 
-      const ResponsiveImageCard(imageUrl: '/images/flatcard.png', altText: 'Bainaryglobe'),
 
 
-      const TitleText(),
 
-      const RollingImage(imageUrl: '/images/01.png'),
-
-      const Rest.ResponsiveImageCard(imageUrl: '/images/n2.png', altText: 'Bainaryglobe'),
-
-
-      const ResponsiveImageCardGrid(),
+      // const RotatingImageCard(imageUrl: '/images/o1.png', altText: 'test'),
 
       // const ResponsiveImageCard(imageUrl: '/images/flatcard.png', altText: 'Bainaryglobe'),
 
-      const Rest.ResponsiveImageCard(imageUrl: '/images/n7.png', altText: 'Bainaryglobe'),
+      // Purplet(),
 
-      const TitleText2(),
 
-      const TitleText3(),
 
-      // const Prof.ProfileCard(),
+      // const CompoundComponent(),
 
-      const ProfileCardGrid(),
+// br(),
+      const Compounder(),
+      // const DynamicHeightCard(),
+      //  Pure.Purplet(),
+
+      // br(),
+
+      // const Rest.ResponsiveImageCard(imageUrl: '/images/n2.png', altText: 'Bainaryglobe'),
+
+
+      // const ResponsiveImageCardGrid(),
+
+      // // const ResponsiveImageCard(imageUrl: '/images/flatcard.png', altText: 'Bainaryglobe'),
+
+      // const Rest.ResponsiveImageCard(imageUrl: '/images/n7.png', altText: 'Bainaryglobe'),
+
+      // const TitleText2(),
+
+      // const TitleText3(),
+
+      // // const Prof.ProfileCard(),
+
+      // const ProfileCardGrid(),
+
+
 
 
     ]);

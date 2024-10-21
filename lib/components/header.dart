@@ -1,4 +1,3 @@
-import 'package:bainaryglobeweb/constants/theme.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -11,7 +10,6 @@ class Header extends StatefulComponent {
 
 class _HeaderState extends State<Header> {
   bool isMenuOpen = false;
-  bool isDarkTheme = false;
 
   void toggleMenu() {
     setState(() {
@@ -19,87 +17,198 @@ class _HeaderState extends State<Header> {
     });
   }
 
-  void toggleTheme() {
-    setState(() {
-      isDarkTheme = !isDarkTheme;
-    });
-  }
-
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    var activePath = context.binding.currentUri.path;
+    yield nav(classes: 'flex items-center justify-between p-4 w-5/6 mx-auto', [
 
-    yield header(classes: 'relative', [
-      nav(classes: 'bg-[#800080] top-4 bg-opacity-100 mx-auto fixed left-1/2 transform -translate-x-1/2 h-16 w-11/12 rounded-lg shadow-lg flex justify-between items-center p-4', [
-        div(classes: 'flex items-center', [
-          img(src: 'images/logo1.png', classes: 'h-12 w-12 mr-2'), // Add your logo here
-          span(classes: 'text-white text-2xl font-bold font-space-grotesk', [text('Bainaryglobe')]),
-        ]),
+      div(classes: 'flex items-center space-x-2',
+        [
+          img(src: '/images/logo1.png', classes: 'h-8 w-auto'), // Adjust the height as needed
+          div(classes: 'text-lg font-bold',
+          [
+            // link(href: '', ).
+                      text('bainaryglobe'), // Adjust the text size and style as needed
 
-        div(classes: 'hidden md:flex items-center space-x-4', [
-          for (var route in [
-            (label: 'HOME', path: '/'),
-            (label: 'ABOUT', path: '/'),
-            (label: 'SERVICES', path: '/'),
-            (label: 'CONTACT', path: '/'),
-          ])
-            Link(
-              to: route.path,
-              child: text(route.label),
-              classes: 'text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300${route.label == 'CONTACT' ? ' border border-white rounded-lg' : ''}',
-            ),
-        ]),
+          ]
+          )
+        ]
+      ),
 
-        div(classes: 'flex items-center space-x-4', [
-          button(
-            onClick: toggleMenu,
-            classes: 'text-white focus:outline-none md:hidden',
-            [
-              span(classes: 'hamburger-icon', [
-                div(classes: 'w-6 h-1 bg-white mb-1', []),
-                div(classes: 'w-6 h-1 bg-white mb-1', []),
-                div(classes: 'w-6 h-1 bg-white', []),
-              ]),
-            ],
-          ),
-          button(
-            onClick: toggleTheme,
-            classes: 'text-white focus:outline-none',
-            [
-              img(src: isDarkTheme ? 'images/switch.png' : 'images/switch.png', classes: 'h-9 w-9'), // Add your theme switcher icons here
-            ],
-          ),
+      div(classes: 'md:hidden', [
+        button(
+          onClick: toggleMenu,
+          classes: 'text-gray-800 font-medium ',
+          [
+            const DomComponent(tag: 'i', classes: 'fas fa-bars bg-black'),
+          ],
+        ),
+        ul(classes: 'font-bold flex-col space-y-4 mt-2 ${isMenuOpen ? '' : 'hidden'}', [
+          li(classes: 'text-gray-800 font-medium', [
+            text('Product '),
+            const DomComponent(tag: 'i', classes: 'fas fa-chevron-down'),
+          ]),
+          li(classes: 'text-gray-800 font-bold', [text('Home')]),
+          li(classes: 'text-gray-800 font-bold', [text('About Us')]),
+          li(classes: 'text-gray-800 font-bold', [text('Mission')]),
         ]),
       ]),
-
-      if (isMenuOpen)
-        div(classes: 'absolute top-16 left-0 w-full bg-[#800080] bg-opacity-90 p-4 transition-opacity duration-300', [
-          div(classes: 'flex flex-col items-center space-y-4', [
-            for (var route in [
-              (label: 'HOME', path: '/'),
-              (label: 'ABOUT', path: '/about'),
-              (label: 'SERVICES', path: '/'),
-              (label: 'CONTACT', path: '/contact'),
-            ])
-              Link(
-                to: route.path,
-                child: text(route.label),
-                classes: 'text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300${route.label == 'CONTACT' ? ' border border-white rounded-lg' : ''}',
-              ),
-          ]),
+      ul(classes: 'hidden md:flex space-x-8', [
+        li(classes: 'text-gray-800 font-medium', [
+          text('Product '),
+          const DomComponent(tag: 'i', classes: 'fas fa-chevron-down'),
         ]),
+        li(classes: 'text-gray-800 font-bold', [text('Home')]),
+        li(classes: 'text-gray-800 font-bold', [text('About Us')]),
+        li(classes: 'text-gray-800 font-bold', [text('Mission')]),
+      ]),
+      button(
+        classes: 'bg-gradient-to-r from-black to-purple-600 text-white font-medium py-2 px-4 rounded-full',
+        [text('Explore Now')],
+      ),
     ]);
-
-    if (isDarkTheme) {
-      yield DomComponent(
-        tag: 'style',
-        children: [
-          text('body { background-color: black; }'),
-        ],
-      );
-    }
   }
 }
+
+// void main() {
+//   runApp(const Header());
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'package:bainaryglobeweb/constants/theme.dart';
+// import 'package:jaspr/jaspr.dart';
+// import 'package:jaspr_router/jaspr_router.dart';
+
+// class Header extends StatefulComponent {
+//   const Header({super.key});
+
+//   @override
+//   State<Header> createState() => _HeaderState();
+// }
+
+// class _HeaderState extends State<Header> {
+//   bool isMenuOpen = false;
+//   bool isDarkTheme = false;
+
+//   void toggleMenu() {
+//     setState(() {
+//       isMenuOpen = !isMenuOpen;
+//     });
+//   }
+
+//   void toggleTheme() {
+//     setState(() {
+//       isDarkTheme = !isDarkTheme;
+//     });
+//   }
+
+//   @override
+//   Iterable<Component> build(BuildContext context) sync* {
+//     var activePath = context.binding.currentUri.path;
+
+//     yield header(classes: 'relative', [
+//       nav(classes: 'bg-[#800080] top-4 bg-opacity-100 mx-auto fixed left-1/2 transform -translate-x-1/2 h-16 w-11/12 rounded-lg shadow-lg flex justify-between items-center p-4', [
+//         div(classes: 'flex items-center', [
+//           img(src: 'images/logo1.png', classes: 'h-12 w-12 mr-2'), // Add your logo here
+//           span(classes: 'text-white text-2xl font-bold font-space-grotesk', [text('Bainaryglobe')]),
+//         ]),
+
+//         div(classes: 'hidden md:flex items-center space-x-4', [
+//           for (var route in [
+//             (label: 'HOME', path: '/'),
+//             (label: 'ABOUT', path: '/'),
+//             (label: 'SERVICES', path: '/'),
+//             (label: 'CONTACT', path: '/'),
+//           ])
+//             Link(
+//               to: route.path,
+//               child: text(route.label),
+//               classes: 'text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300${route.label == 'CONTACT' ? ' border border-white rounded-lg' : ''}',
+//             ),
+//         ]),
+
+//         div(classes: 'flex items-center space-x-4', [
+//           button(
+//             onClick: toggleMenu,
+//             classes: 'text-white focus:outline-none md:hidden',
+//             [
+//               span(classes: 'hamburger-icon', [
+//                 div(classes: 'w-6 h-1 bg-white mb-1', []),
+//                 div(classes: 'w-6 h-1 bg-white mb-1', []),
+//                 div(classes: 'w-6 h-1 bg-white', []),
+//               ]),
+//             ],
+//           ),
+//           button(
+//             onClick: toggleTheme,
+//             classes: 'text-white focus:outline-none',
+//             [
+//               img(src: isDarkTheme ? 'images/switch.png' : 'images/switch.png', classes: 'h-9 w-9'), // Add your theme switcher icons here
+//             ],
+//           ),
+//         ]),
+//       ]),
+
+//       if (isMenuOpen)
+//         div(classes: 'absolute top-16 left-0 w-full bg-[#800080] bg-opacity-90 p-4 transition-opacity duration-300', [
+//           div(classes: 'flex flex-col items-center space-y-4', [
+//             for (var route in [
+//               (label: 'HOME', path: '/'),
+//               (label: 'ABOUT', path: '/about'),
+//               (label: 'SERVICES', path: '/'),
+//               (label: 'CONTACT', path: '/contact'),
+//             ])
+//               Link(
+//                 to: route.path,
+//                 child: text(route.label),
+//                 classes: 'text-white font-bold no-underline px-4 py-2 hover:text-primaryColor transition-colors duration-300${route.label == 'CONTACT' ? ' border border-white rounded-lg' : ''}',
+//               ),
+//           ]),
+//         ]),
+//     ]);
+
+//     if (isDarkTheme) {
+//       yield DomComponent(
+//         tag: 'style',
+//         children: [
+//           text('body { background-color: black; }'),
+//         ],
+//       );
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
