@@ -41,8 +41,17 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = [
+
+    "django.contrib.sites",
+    "cms",
+    "menus",
+    "treebeard",
+
     'web',
+    "djangocms_admin_style",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,7 +124,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ("en", "English"),
+    ("de", "German"),
+    ("it", "Italian"),
+]
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = 'UTC'
 
