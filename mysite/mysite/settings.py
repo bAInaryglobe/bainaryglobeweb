@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,14 +45,15 @@ CSRF_TRUSTED_ORIGINS = [
 SITE_ID = 1
 
 INSTALLED_APPS = [
-
-    "django.contrib.sites",
-    "cms",
-    "menus",
-    "treebeard",
-
+    "djangocms_versioning",
+    "djangocms_alias",
+    'sekizai',
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
     'web',
-    "djangocms_admin_style",
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,7 +62,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+CMS_TEMPLATES = [
+    ('home.html', 'Home page template'),
+]
+
 MIDDLEWARE = [
+    'cms.middleware.utils.ApphookReloadMiddleware',
+    # 'django:django.middleware.locale.LocaleMiddleware',  # not installed by default
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,17 +80,29 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Add this line
+
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+
+            'templates',
+            [os.path.join(BASE_DIR, 'templates')],  # Ensure this directory exists and contains home.html
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.i18n',
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -131,6 +155,9 @@ LANGUAGES = [
     ("de", "German"),
     ("it", "Italian"),
 ]
+
+CMS_CONFIRM_VERSION4 = True
+
 LANGUAGE_CODE = "en"
 
 TIME_ZONE = 'UTC'
@@ -139,6 +166,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
