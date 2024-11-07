@@ -92,10 +92,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-
-            'templates',
-            [os.path.join(BASE_DIR, 'templates')],  # Ensure this directory exists and contains home.html
-
+            os.path.join(BASE_DIR, 'templates'),  # Ensure this directory exists and contains home.html
         ],
         'APP_DIRS': True,
         'OPTIONS': {
