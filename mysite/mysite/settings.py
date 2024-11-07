@@ -68,13 +68,14 @@ CMS_TEMPLATES = [
 
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
     # 'django:django.middleware.locale.LocaleMiddleware',  # not installed by default
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
